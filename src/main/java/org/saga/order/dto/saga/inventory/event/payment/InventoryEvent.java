@@ -1,6 +1,5 @@
-package org.saga.order.dto.saga.inventory;
+package org.saga.order.dto.saga.inventory.event.payment;
 
-import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +8,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
-import org.saga.order.dto.saga.order.ProductItemDto;
+import org.saga.order.dto.saga.EventDto;
+import org.saga.order.dto.saga.inventory.InventoryDto;
+import org.saga.order.dto.saga.inventory.event.InventoryStatus;
 
 @Getter
 @Setter
@@ -18,8 +19,9 @@ import org.saga.order.dto.saga.order.ProductItemDto;
 @Builder
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class InventoryRequest {
+public class InventoryEvent extends EventDto {
 
-  List<ProductItemDto> productItems;
+  InventoryDto inventoryDto;
+  InventoryStatus inventoryStatus;
 
 }

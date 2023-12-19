@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+import org.saga.order.dto.saga.EventDto;
 import org.saga.order.dto.saga.order.OrderCreateRequest;
 import org.saga.order.dto.saga.order.OrderStatus;
 
@@ -18,16 +19,13 @@ import org.saga.order.dto.saga.order.OrderStatus;
 @Builder
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class OrderCreateEvent {
+public class OrderCreateEvent extends EventDto {
 
-  final UUID eventId;
-  final LocalDateTime dateTime;
   OrderCreateRequest orderCreateRequest;
   OrderStatus orderStatus;
 
   public OrderCreateEvent() {
-    eventId = UUID.randomUUID();
-    dateTime = LocalDateTime.now();
+    super();
   }
 
 }
