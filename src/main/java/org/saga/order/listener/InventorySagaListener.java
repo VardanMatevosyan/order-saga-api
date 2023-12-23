@@ -4,7 +4,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.saga.order.dto.saga.inventory.event.order.InventoryEvent;
+import org.saga.order.dto.saga.inventory.event.InventoryOrderEvent;
 import org.saga.order.dto.saga.notification.NotifyEvent;
 import org.saga.order.dto.saga.order.OrderStatus;
 import org.saga.order.dto.saga.payment.event.PaymentStatus;
@@ -28,17 +28,18 @@ public class InventorySagaListener {
   @Value("${notification-saga-topic}")
   String notificationTopicName;
 
-  @KafkaListener(groupId = "order-consumer", topics = {"inventory-order-saga-topic"})
-  public void listener(InventoryEvent inventoryEvent) {
-    log.info("Received inventory event %s".formatted(inventoryEvent));
+  @KafkaListener(groupId = "order-consumer", topics = {"inventory-order-saga-topic"},
+  properties = {"spring.json.value.default.type=org.saga.order.dto.saga.inventory.event.InventoryOrderEvent"})
+  public void listener(InventoryOrderEvent inventoryOrderEvent) {
+    log.info("Received inventory event %s".formatted(inventoryOrderEvent));
 
-    PaymentStatus paymentStatus = inventoryEvent.getPaymentStatus();
-    Long orderId = inventoryEvent.getInventoryDto().getOrderId();
+    PaymentStatus paymentStatus = inventoryOrderEvent.getPaymentStatus();
+    Long orderId = inventoryOrderEvent.getInventoryDto().getOrderId();
 
     String orderStatus = OrderStatus.getOrderStatus(paymentStatus);
     orderService.updateOrderStatus(orderId, orderStatus);
 
-    NotifyEvent notifyEvent = notificationEventMapper.toEvent(inventoryEvent, orderStatus);
+    NotifyEvent notifyEvent = notificationEventMapper.toEvent(inventoryOrderEvent, orderStatus);
     messageBroker.send(notificationTopicName, notifyEvent);
   }
 

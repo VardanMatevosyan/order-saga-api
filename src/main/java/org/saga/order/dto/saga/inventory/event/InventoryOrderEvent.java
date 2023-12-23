@@ -1,4 +1,4 @@
-package org.saga.order.dto.saga.inventory.event.order;
+package org.saga.order.dto.saga.inventory.event;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ import org.saga.order.dto.saga.payment.event.PaymentStatus;
 @Builder
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class InventoryEvent extends EventDto {
+public class InventoryOrderEvent extends EventDto {
 
   InventoryDto inventoryDto;
   PaymentStatus paymentStatus;

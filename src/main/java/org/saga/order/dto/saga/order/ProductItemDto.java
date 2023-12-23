@@ -17,7 +17,7 @@ import lombok.experimental.FieldDefaults;
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProductItemDto {
-  Integer productId;
+  String productId;
   Integer amount;
   Integer price;
 }
