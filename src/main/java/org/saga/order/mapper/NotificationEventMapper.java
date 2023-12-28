@@ -3,8 +3,8 @@ package org.saga.order.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
-import org.saga.order.dto.saga.inventory.event.InventoryOrderEvent;
-import org.saga.order.dto.saga.notification.NotifyEvent;
+import org.saga.common.dto.inventory.event.InventoryOrderEvent;
+import org.saga.common.dto.notification.NotifyEvent;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface NotificationEventMapper {

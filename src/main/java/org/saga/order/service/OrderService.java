@@ -1,7 +1,6 @@
 package org.saga.order.service;
 
-import org.saga.order.dto.saga.order.OrderCreateRequest;
-import org.saga.order.dto.saga.order.OrderStatus;
+import org.saga.common.dto.order.OrderCreateRequest;
 
 public interface OrderService {
 

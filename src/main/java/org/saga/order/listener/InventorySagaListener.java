@@ -4,10 +4,10 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.saga.order.dto.saga.inventory.event.InventoryOrderEvent;
-import org.saga.order.dto.saga.notification.NotifyEvent;
-import org.saga.order.dto.saga.order.OrderStatus;
-import org.saga.order.dto.saga.payment.event.PaymentStatus;
+import org.saga.common.dto.inventory.event.InventoryOrderEvent;
+import org.saga.common.enums.OrderStatus;
+import org.saga.common.enums.PaymentStatus;
+import org.saga.common.dto.notification.NotifyEvent;
 import org.saga.order.mapper.NotificationEventMapper;
 import org.saga.order.service.OrderService;
 import org.saga.order.service.impl.MessageBroker;
@@ -28,8 +28,7 @@ public class InventorySagaListener {
   @Value("${notification-saga-topic}")
   String notificationTopicName;
 
-  @KafkaListener(groupId = "order-consumer", topics = {"inventory-order-saga-topic"},
-  properties = {"spring.json.value.default.type=org.saga.order.dto.saga.inventory.event.InventoryOrderEvent"})
+  @KafkaListener(groupId = "order-consumer", topics = {"inventory-order-saga-topic"})
   public void listener(InventoryOrderEvent inventoryOrderEvent) {
     log.info("Received inventory event %s".formatted(inventoryOrderEvent));
 

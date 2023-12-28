@@ -1,15 +1,15 @@
 package org.saga.order.service.impl;
 
-import static org.saga.order.dto.saga.order.OrderStatus.ORDER_CREATED;
+import static org.saga.common.enums.OrderStatus.ORDER_CREATED;
 
 import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.saga.order.dto.saga.order.OrderCreateRequest;
-import org.saga.order.dto.saga.order.OrderStatus;
-import org.saga.order.dto.saga.order.event.OrderCreateEvent;
+import org.saga.common.dto.order.OrderCreateRequest;
+import org.saga.common.dto.order.event.OrderCreateEvent;
+import org.saga.common.enums.OrderStatus;
 import org.saga.order.entity.Order;
 import org.saga.order.mapper.OrderCreateRequestMapper;
 import org.saga.order.repository.OrderRepository;

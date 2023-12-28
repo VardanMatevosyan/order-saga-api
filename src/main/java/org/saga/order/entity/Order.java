@@ -16,9 +16,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.ColumnDefault;
-import org.saga.order.dto.saga.inventory.event.InventoryStatus;
-import org.saga.order.dto.saga.order.OrderStatus;
-import org.saga.order.dto.saga.payment.event.PaymentStatus;
+import org.saga.common.enums.InventoryStatus;
+import org.saga.common.enums.OrderStatus;
+import org.saga.common.enums.PaymentStatus;
 
 @Entity
 @Table(name = "orders", schema = "perches")

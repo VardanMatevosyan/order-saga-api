@@ -3,9 +3,9 @@ package org.saga.order.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
-import org.saga.order.dto.saga.order.OrderCreateRequest;
-import org.saga.order.dto.saga.order.OrderStatus;
-import org.saga.order.dto.saga.order.event.OrderCreateEvent;
+import org.saga.common.dto.order.OrderCreateRequest;
+import org.saga.common.enums.OrderStatus;
+import org.saga.common.dto.order.event.OrderCreateEvent;
 import org.saga.order.entity.Order;
 
 @Mapper(componentModel = "spring",
