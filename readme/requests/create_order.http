@@ -1,0 +1,22 @@
+###
+
+POST http://localhost:9090/order
+Content-Type: application/json
+
+{
+  "customerEmail": "realEmail@gmail.com",
+  "productItems": [
+    {
+      "productId": "6586f897335e854afe0444d1",
+      "amount": 2,
+      "price": 10
+    },
+    {
+      "productId": "6586f8c6335e854afe0444d2",
+      "amount": 1,
+      "price": 3
+    }
+  ],
+  "price": 24
+}
+

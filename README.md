@@ -3,6 +3,11 @@ An example of distributed transaction Saga pattern support
 An entry point when saga distributed transaction starts
 when the user calls the API endpoint to create an order
 
+Implemented distributed transaction using SAGA CHOREOGRAPHY microservice pattern
+(BLUE rectangle without CQRS)
+
+![Saga_order-payment.png](readme%2Fimages%2FSaga_order-payment.png)
+
 To start need to:
 # Start Mongo in Docker
 ```
@@ -22,22 +27,37 @@ This docker-compose can be used ...  will add later
 
 # Start all the microservices
 ```
-... will add later
+publish to local repository for now
 ```
+https://github.com/VardanMatevosyan/common-saga-dto
+
+
+```
+Import to IDEA and start all this microservices
+At this time no docker-compose or kubernetes availabe
+```
+https://github.com/VardanMatevosyan/payment-saga-api
+https://github.com/VardanMatevosyan/inventory-saga-api
+https://github.com/VardanMatevosyan/order-saga-api
+https://github.com/VardanMatevosyan/notification-saga-api
+
 
 # Create one or more products by sending the request to products Get endpoint
 ```
-...  will add later
+Run this request
+[create_product.http](readme%2Frequests%2Fcreate_product.http)
 ```
 
 # Send request to order endpoint
 ```
-... will add later
+Run this request
+[create_order.http](readme%2Frequests%2Fcreate_order.http)
 ```
 
 # To check the products in the mongoDB send request to products endpoint
 ```
-... will add later
+Run this request
+[get_all_product.http](readme%2Frequests%2Fget_all_product.http)
 ```
 
 # To check the topic messages this link can be used

@@ -1,0 +1,41 @@
+###
+
+POST http://localhost:9091/inventory/products/
+Content-Type: application/json
+
+{
+  "name": "Laptop Asus Zen 14",
+  "description": "This is an example product description.",
+  "price": 20,
+  "quantityAvailable": 100,
+  "category": "Electronics",
+  "supplierDto": {
+    "name": "ABC Suppliers",
+    "contactInformation": "supplier@example.com"
+  }
+}
+
+###
+POST http://localhost:9091/inventory/products/
+Content-Type: application/json
+
+{
+  "name": "Laptop Lenovo",
+  "description": "This is an example product description.",
+  "price": 30,
+  "quantityAvailable": 100,
+  "category": "Electronics",
+  "supplierDto": {
+    "name": "CH Suppliers",
+    "contactInformation": "supplier2@example.com"
+  }
+}
+
+###
+
+###
+
+GET http://localhost:9091/inventory/products/
+
+###
+
