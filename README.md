@@ -29,17 +29,17 @@ This docker-compose can be used ...  will add later
 ```
 publish to local repository for now
 ```
-https://github.com/VardanMatevosyan/common-saga-dto
+ - https://github.com/VardanMatevosyan/common-saga-dto
 
 
 ```
 Import to IDEA and start all this microservices
 At this time no docker-compose or kubernetes availabe
 ```
-https://github.com/VardanMatevosyan/payment-saga-api
-https://github.com/VardanMatevosyan/inventory-saga-api
-https://github.com/VardanMatevosyan/order-saga-api
-https://github.com/VardanMatevosyan/notification-saga-api
+ - https://github.com/VardanMatevosyan/payment-saga-api
+ - https://github.com/VardanMatevosyan/inventory-saga-api
+ - https://github.com/VardanMatevosyan/order-saga-api
+ - https://github.com/VardanMatevosyan/notification-saga-api
 
 
 # Create one or more products by sending the request to products Get endpoint
