@@ -4,7 +4,7 @@ An entry point when saga distributed transaction starts
 when the user calls the API endpoint to create an order
 
 Implemented distributed transaction using SAGA CHOREOGRAPHY microservice pattern
-(BLUE rectangle without CQRS)
+(BLUE rectangle without CQRS (because not final version yet, this needs some schema changes))
 
 ![Saga_order-payment.png](readme%2Fimages%2FSaga_order-payment.png)
 
